@@ -1,0 +1,290 @@
+// Test3.cpp : Defines the entry point for the console application.
+#include "stdafx.h"
+#include "c:\LccMetalBox\LccIo.cpp"
+#include <conio.h>
+
+void initializeppi(void);
+void Zero(void);
+void One(void);
+void Two(void);
+void Three(void);
+void Four(void);
+void Five(void);
+void Six(void);
+void Clear(void);
+
+int main(void)
+{
+	int sw = 0;
+	initializeppi();
+	
+	while (1)
+	{
+		sw = LccInport(0x0305);
+		if (sw == 0)
+		{
+			Clear();
+		}
+		if (sw == 1)
+		{
+			Zero();
+			printf("Dot matrix 0 printed\n");
+		}
+		if (sw == 2)
+		{
+			One();
+			printf("Dot matrix 1 printed\n");
+		}
+		if (sw == 4)
+		{
+			Two();
+			printf("Dot matrix 2 printed\n");
+		}
+		if (sw == 8)
+		{
+			Three();
+			printf("Dot matrix 3 printed\n");
+		}
+		if (sw == 16)
+		{
+			Four();
+			printf("Dot matrix 4 printed\n");
+		}
+		if (sw == 32)
+		{
+			Five();
+			printf("Dot matrix 5 printed\n");
+		}
+		if (sw == 64)
+		{
+			Six();
+			printf("Dot matrix 6 printed\n");
+		}
+		if (sw == 128)
+		{
+			break;
+		}
+	}
+	return 0;
+}//end main()
+
+void Zero(void)
+{
+LccOutport(0x4602, 1);
+LccOutport(0x4603, 1);
+LccOutport(0x4701, 1);
+LccOutport(0x4704, 1);
+LccOutport(0x4801, 1);
+LccOutport(0x4901, 1);
+LccOutport(0x4A01, 1);
+LccOutport(0x4B01, 1);
+LccOutport(0x4C01, 1);
+LccOutport(0x4D01, 1);
+LccOutport(0x4E02, 1);
+LccOutport(0x4E03, 1);
+LccOutport(0x4804, 1);
+LccOutport(0x4904, 1);
+LccOutport(0x4A04, 1);
+LccOutport(0x4B04, 1);
+LccOutport(0x4C04, 1);
+LccOutport(0x4D04, 1);
+}
+void One(void)
+{
+LccOutport(0x4101, 1);
+LccOutport(0x4201, 1);
+LccOutport(0x4301, 1);
+LccOutport(0x4401, 1);
+LccOutport(0x4501, 1);
+LccOutport(0x4601, 1);
+LccOutport(0x4701, 1);
+LccOutport(0x4801, 1);
+LccOutport(0x4901, 1);
+LccOutport(0x4300, 1);
+LccOutport(0x4900, 1);
+LccOutport(0x4902, 1);
+}
+void Two(void)
+{
+LccOutport(0x4103, 1);
+LccOutport(0x4104, 1);
+LccOutport(0x4105, 1);
+LccOutport(0x4203, 1);
+LccOutport(0x4503, 1);
+LccOutport(0x4603, 1);
+LccOutport(0x4703, 1);
+LccOutport(0x4404, 1);
+LccOutport(0x4704, 1);
+LccOutport(0x4705, 1);
+LccOutport(0x4305, 1);
+LccOutport(0x4205, 1);
+}
+void Three(void)
+{
+LccOutport(0x4106, 1);
+LccOutport(0x4107, 1);
+LccOutport(0x4108, 1);
+LccOutport(0x4109, 1);
+LccOutport(0x4209, 1);
+LccOutport(0x4309, 1);
+LccOutport(0x4408, 1);
+LccOutport(0x4409, 1);
+LccOutport(0x4509, 1);
+LccOutport(0x4609, 1);
+LccOutport(0x4709, 1);
+LccOutport(0x4706, 1);
+LccOutport(0x4707, 1);
+LccOutport(0x4708, 1);
+}
+void Four(void)
+{
+LccOutport(0x4602, 1);
+LccOutport(0x4702, 1);
+LccOutport(0x4802, 1);
+LccOutport(0x4902, 1);
+LccOutport(0x4903, 1);
+LccOutport(0x4604, 1);
+LccOutport(0x4704, 1);
+LccOutport(0x4804, 1);
+LccOutport(0x4904, 1);
+LccOutport(0x4A04, 1);
+LccOutport(0x4B04, 1);
+LccOutport(0x4C04, 1);
+LccOutport(0x4D04, 1);
+}
+void Five(void)
+{
+LccOutport(0x4606, 1);
+LccOutport(0x4706, 1);
+LccOutport(0x4806, 1);
+LccOutport(0x4906, 1);
+LccOutport(0x4D06, 1);
+LccOutport(0x4607, 1);
+LccOutport(0x4A07, 1);
+LccOutport(0x4D07, 1);
+LccOutport(0x4608, 1);
+LccOutport(0x4B08, 1);
+LccOutport(0x4C08, 1);
+}
+void Six(void)
+{
+LccOutport(0x5201, 1);
+LccOutport(0x5301, 1);
+LccOutport(0x5401, 1);
+LccOutport(0x5501, 1);
+LccOutport(0x5601, 1);
+LccOutport(0x5701, 1);
+LccOutport(0x5801, 1);
+LccOutport(0x5901, 1);
+LccOutport(0x5202, 1);
+LccOutport(0x5702, 1);
+LccOutport(0x5902, 1);
+LccOutport(0x5203, 1);
+LccOutport(0x5703, 1);
+LccOutport(0x5803, 1);
+LccOutport(0x5903, 1);
+}
+void Clear(void)
+{
+	LccOutport(0x4602, 0);
+	LccOutport(0x4603, 0);
+	LccOutport(0x4701, 0);
+	LccOutport(0x4704, 0);
+	LccOutport(0x4801, 0);
+	LccOutport(0x4901, 0);
+	LccOutport(0x4A01, 0);
+	LccOutport(0x4B01, 0);
+	LccOutport(0x4C01, 0);
+	LccOutport(0x4D01, 0);
+	LccOutport(0x4E02, 0);
+	LccOutport(0x4E03, 0);
+	LccOutport(0x4804, 0);
+	LccOutport(0x4904, 0);
+	LccOutport(0x4A04, 0);
+	LccOutport(0x4B04, 0);
+	LccOutport(0x4C04, 0);
+	LccOutport(0x4D04, 0);
+	LccOutport(0x4101, 0);
+	LccOutport(0x4201, 0);
+	LccOutport(0x4301, 0);
+	LccOutport(0x4401, 0);
+	LccOutport(0x4501, 0);
+	LccOutport(0x4601, 0);
+	LccOutport(0x4701, 0);
+	LccOutport(0x4801, 0);
+	LccOutport(0x4901, 0);
+	LccOutport(0x4300, 0);
+	LccOutport(0x4900, 0);
+	LccOutport(0x4902, 0);
+	LccOutport(0x4103, 0);
+	LccOutport(0x4104, 0);
+	LccOutport(0x4105, 0);
+	LccOutport(0x4203, 0);
+	LccOutport(0x4503, 0);
+	LccOutport(0x4603, 0);
+	LccOutport(0x4703, 0);
+	LccOutport(0x4404, 0);
+	LccOutport(0x4704, 0);
+	LccOutport(0x4705, 0);
+	LccOutport(0x4305, 0);
+	LccOutport(0x4205, 0);
+	LccOutport(0x4106, 0);
+	LccOutport(0x4107, 0);
+	LccOutport(0x4108, 0);
+	LccOutport(0x4109, 0);
+	LccOutport(0x4209, 0);
+	LccOutport(0x4309, 0);
+	LccOutport(0x4408, 0);
+	LccOutport(0x4409, 0);
+	LccOutport(0x4509, 0);
+	LccOutport(0x4609, 0);
+	LccOutport(0x4709, 0);
+	LccOutport(0x4706, 0);
+	LccOutport(0x4707, 0);
+	LccOutport(0x4708, 0);
+	LccOutport(0x4602, 0);
+	LccOutport(0x4702, 0);
+	LccOutport(0x4802, 0);
+	LccOutport(0x4902, 0);
+	LccOutport(0x4903, 0);
+	LccOutport(0x4604, 0);
+	LccOutport(0x4704, 0);
+	LccOutport(0x4804, 0);
+	LccOutport(0x4904, 0);
+	LccOutport(0x4A04, 0);
+	LccOutport(0x4B04, 0);
+	LccOutport(0x4C04, 0);
+	LccOutport(0x4D04, 0);
+	LccOutport(0x4606, 0);
+	LccOutport(0x4706, 0);
+	LccOutport(0x4806, 0);
+	LccOutport(0x4906, 0);
+	LccOutport(0x4D06, 0);
+	LccOutport(0x4607, 0);
+	LccOutport(0x4A07, 0);
+	LccOutport(0x4D07, 0);
+	LccOutport(0x4608, 0);
+	LccOutport(0x4B08, 0);
+	LccOutport(0x4C08, 0);
+	LccOutport(0x5201, 0);
+	LccOutport(0x5301, 0);
+	LccOutport(0x5401, 0);
+	LccOutport(0x5501, 0);
+	LccOutport(0x5601, 0);
+	LccOutport(0x5701, 0);
+	LccOutport(0x5801, 0);
+	LccOutport(0x5901, 0);
+	LccOutport(0x5202, 0);
+	LccOutport(0x5702, 0);
+	LccOutport(0x5902, 0);
+	LccOutport(0x5203, 0);
+	LccOutport(0x5703, 0);
+	LccOutport(0x5803, 0);
+	LccOutport(0x5903, 0);
+}
+void initializeppi(void)
+{
+	//initialize metal box
+	LccOutport(0x0303, 0x88);
+	LccOutport(0x0307, 0x92);
+}
